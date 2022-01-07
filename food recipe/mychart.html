@@ -1,0 +1,43 @@
+<fieldset>
+  <legend>Form 1</legend>
+  <form name="f1" id="f1" onsubmit="return validate(this)">
+      <input type="text" name="username" placeholder="Username" />
+  </form>
+</fieldset>
+
+<fieldset>
+  <legend>Form 2</legend>
+  <form name="f2" id="f2" onsubmit="return validate(this)">
+      <input type="text" name="email" placeholder="Email" />
+  </form>
+</fieldset>
+
+<fieldset>
+  <legend>Form 3</legend>
+  <form name="f3" id="f3" onsubmit="return validate(this)">
+      <input type="text" name="password" placeholder="Password" />
+  </form>
+</fieldset>
+
+<button onclick="submitAll();">SUBMIT ALL</button>
+
+<script>
+'use strict';
+
+function validate(form){
+  //forms processsing goes here...
+  console.log(form, form.name)
+  return false;
+}
+
+function submitAll(){
+  for(var i=0, n=document.forms.length; i<n; i++){
+      document.forms[i].onsubmit();
+  }
+
+}
+
+</script>
+
+</body>
+</html>

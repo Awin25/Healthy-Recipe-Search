@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+    <title>Calorie Counter</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="calorie.css">
+    <script type="text/JavaScript" src="calorie.js"></script>
+
+    <!--add icon-->
+</head>
+
+<body>
+    <section>
+    <div id = change><h1>Calorie Calculator</h1>
+        <span> How many meals calories are you looking for? </span>
+        <input type="number" id="userInput" oninput= inst() ><br/><br/>
+    </div>
+    </div>
+    <div id="wrapper"></div>
+    <div class="bigbutton">
+    <button >Calculate</button>
+    </div>
+    
+
+
+    
+    <script>
+      function inst(){
+      var userinput = document.getElementById('userInput').value;      
+      const wrapper = document.querySelector('#wrapper');
+      const button = document.querySelector('button');
+      button.addEventListener('click', handleClick, false);
+
+
+
+      let myHTML = '';
+      for (var i = 0; i < userinput; i++) {
+        myHTML += '<span class="test">Meal #' + (i + 1) + ' Calories: ' + '</span>  <input type="number" id="mealname" <br/> <br/> ';
+        
+      }
+
+        wrapper.innerHTML = myHTML
+        function handleClick() {
+            const inputs = wrapper.querySelectorAll('input');
+
+            const numa = Array.from(inputs).reduce((acc, input) => {
+    return acc + Number(input.value);
+  }, 0);
+  console.log(numa);
+
+  document.body.onload = addElement;
+
+function addElement () {
+  // create a new div element
+  const newDiv = document.createElement("div");
+
+  // and give it some content
+  const newContent = document.createTextNode("Hi there and greetings!");
+
+  // add the text node to the newly created div
+  newDiv.appendChild(newContent);
+
+  // add the newly created element and its content into the DOM
+  const currentDiv = document.getElementById("div1");
+  document.body.insertBefore(newDiv, currentDiv);
+}
+
+var x = document.createElement("input");
+  x.setAttribute("type", "number");
+  x.setAttribute("value", numa);
+  document.body.appendChild(x);
+
+
+
+  
+
+}
+    
+}
+      
+    </script>
+    <h1 class="item-title"${numa}></h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title>Calorie GraphTracker</title>
+  </head>
+  <body>
+    <div class="container">
+      <canvas id="myChart"></canvas>
+    </div>
+  
+    <script>
+      let myChart = document.getElementById('myChart').getContext('2d');
+      var usedinput = document.getElementById('userInput').value;
+      for (var i = 0; i < userinput; i++) {
+
+      
+
+      // Global Options
+      Chart.defaults.global.defaultFontFamily = 'Lato';
+      Chart.defaults.global.defaultFontSize = 18;
+      Chart.defaults.global.defaultFontColor = '#777';
+  
+      let massPopChart = new Chart(myChart, {
+        type:'pie', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+        data:{
+          labels:['Meal' + i+1],
+          datasets:[{
+            label:'Population',
+            data:[
+              617594,
+              181045,
+              153060
+            ],
+            //backgroundColor:'green',
+            backgroundColor:[
+              'rgba(255, 99, 132, 0.6)',
+              'rgba(54, 162, 235, 0.6)',
+              'rgba(255, 206, 86, 0.6)',
+              'rgba(75, 192, 192, 0.6)',
+              'rgba(153, 102, 255, 0.6)',
+              'rgba(255, 159, 64, 0.6)',
+              'rgba(255, 99, 132, 0.6)'
+            ],
+            borderWidth:1,
+            borderColor:'#777',
+            hoverBorderWidth:3,
+            hoverBorderColor:'#000'
+          }]
+        },
+        options:{
+          title:{
+            display:true,
+            text:'Calorie Tracker',
+            fontSize:25
+          },
+          legend:{
+            display:true,
+            position:'right',
+            labels:{
+              fontColor:'#000'
+            }
+          },
+          layout:{
+            padding:{
+              left:50,
+              right:0,
+              bottom:0,
+              top:0
+            }
+          },
+          tooltips:{
+            enabled:true
+          }
+        }
+      });
+    </script>
+  </body>
+  </html>
+
+
+
+</section>
+</body>
+</html>
+            
